@@ -584,7 +584,7 @@
                     <div class="icon">
                         <i class="fas fa-id-card"></i>
                     </div>
-                    <h1>Demande d'Attestation de Vérification d'Identité (AVI)</h1>
+                    <h1>Demande d'Attestation de Virement d'Irrévocable (AVI)</h1>
                     <p>Remplissez ce formulaire pour obtenir votre attestation sous 48 heures</p>
                 </div>
                 
@@ -673,10 +673,11 @@
                             <label for="country" class="form-label">Pays</label>
                             <select class="form-select" id="country" required>
                                 <option value="" selected disabled>Sélectionnez un pays</option>
-                                <option value="FR">France</option>
-                                <option value="BE">Belgique</option>
-                                <option value="CH">Suisse</option>
-                                <option value="LU">Luxembourg</option>
+                                <option value="CG">Congo Brazzaville</option>
+                                <option value="CH">Chine</option>
+                                <option value="MRC">Maroc</option>
+                                <option value="GB">Gabon</option>
+                                <option value="Trq">Turquie</option>
                                 <option value="other">Autre pays</option>
                             </select>
                             <div class="invalid-feedback">Veuillez sélectionner votre pays.</div>
@@ -715,21 +716,11 @@
                             <div class="invalid-feedback">Veuillez téléverser votre pièce d'identité.</div>
                             <div class="file-preview" id="identityPreview"></div>
                         </div>
-                        
-                        <div class="mb-4">
-                            <label class="form-label">Justificatif de domicile (moins de 3 mois)</label>
-                            <div class="file-upload">
-                                <input type="file" class="file-upload-input" id="proofOfAddress" accept="image/*,.pdf" required>
-                                <label for="proofOfAddress" class="file-upload-label">
-                                    <div class="file-upload-icon">
-                                        <i class="fas fa-home"></i>
-                                    </div>
-                                    <div class="file-upload-text">Cliquez pour téléverser</div>
-                                    <div class="file-upload-hint">Facture, quittance de loyer, etc.</div>
-                                </label>
-                            </div>
-                            <div class="invalid-feedback">Veuillez téléverser un justificatif de domicile.</div>
-                            <div class="file-preview" id="addressProofPreview"></div>
+
+                        <div class="mt-3">
+                            <label for="nationality" class="form-label">Montant AVI</label>
+                            <input type="text" class="form-control" id="nationality" required>
+                            <div class="invalid-feedback">Veuillez entrer votre montant.</div>
                         </div>
                         
                         <div class="mb-4">
@@ -809,7 +800,6 @@
                             </div>
                             <div class="card-body">
                                 <p><strong>Pièce d'identité :</strong> <span id="reviewIdentityDoc"></span> fichier(s)</p>
-                                <p><strong>Justificatif de domicile :</strong> <span id="reviewProofOfAddress"></span> fichier(s)</p>
                                 <p><strong>Autres documents :</strong> <span id="reviewOtherDocs"></span> fichier(s)</p>
                             </div>
                         </div>
@@ -975,6 +965,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
     
     <script>
         // Initialize AOS
@@ -985,6 +976,9 @@
         
         // Set current year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Initialize EmailJS
+        emailjs.init('YOUR_EMAILJS_USER_ID'); // Remplacez par votre User ID EmailJS
         
         // Form Steps Navigation
         const form = document.getElementById('aviForm');
@@ -1110,7 +1104,6 @@
         
         // Initialize file uploads
         setupFileUpload('identityDoc', 'identityPreview');
-        setupFileUpload('proofOfAddress', 'addressProofPreview');
         setupFileUpload('otherDocs', 'otherDocsPreview');
         
         // Update review section
@@ -1132,7 +1125,6 @@
             
             // Documents
             document.getElementById('reviewIdentityDoc').textContent = document.getElementById('identityDoc').files.length;
-            document.getElementById('reviewProofOfAddress').textContent = document.getElementById('proofOfAddress').files.length;
             document.getElementById('reviewOtherDocs').textContent = document.getElementById('otherDocs').files.length;
         }
         
@@ -1141,19 +1133,70 @@
             e.preventDefault();
             
             if (form.checkValidity()) {
-                // Simulate form submission
                 const submitButton = form.querySelector('button[type="submit"]');
                 const originalText = submitButton.innerHTML;
                 submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Traitement en cours...';
                 submitButton.disabled = true;
                 
-                // Show success modal after delay
-                setTimeout(() => {
+                // Collect form data
+                const formData = {
+                    lastName: document.getElementById('lastName').value,
+                    firstName: document.getElementById('firstName').value,
+                    birthDate: document.getElementById('birthDate').value,
+                    birthPlace: document.getElementById('birthPlace').value,
+                    nationality: document.getElementById('nationality').value,
+                    address: document.getElementById('address').value,
+                    addressComplement: document.getElementById('addressComplement').value,
+                    postalCode: document.getElementById('postalCode').value,
+                    city: document.getElementById('city').value,
+                    country: document.getElementById('country').options[document.getElementById('country').selectedIndex].text,
+                    identityDocsCount: document.getElementById('identityDoc').files.length,
+                    otherDocsCount: document.getElementById('otherDocs').files.length,
+                    submissionDate: new Date().toLocaleString()
+                };
+                
+                // Send email using EmailJS
+                emailjs.send('YOUR_EMAILJS_SERVICE_ID', 'YOUR_EMAILJS_TEMPLATE_ID', {
+                    to_email: 'contacts@ecocapitale.com',
+                    from_name: `${formData.firstName} ${formData.lastName}`,
+                    message: `
+                        Nouvelle demande d'AVI reçue :
+                        
+                        Nom: ${formData.lastName}
+                        Prénom: ${formData.firstName}
+                        Date de naissance: ${formData.birthDate}
+                        Lieu de naissance: ${formData.birthPlace}
+                        Nationalité: ${formData.nationality}
+                        
+                        Adresse:
+                        ${formData.address} ${formData.addressComplement}
+                        ${formData.postalCode} ${formData.city}
+                        ${formData.country}
+                        
+                        Documents joints:
+                        - Pièce d'identité: ${formData.identityDocsCount} fichier(s)
+                        - Autres documents: ${formData.otherDocsCount} fichier(s)
+                        
+                        Date de soumission: ${formData.submissionDate}
+                    `,
+                    reply_to: 'no-reply@ecocapitale.com'
+                })
+                .then(function(response) {
+                    console.log('Email envoyé avec succès!', response.status, response.text);
+                    
+                    // Show success modal
                     const successModal = new bootstrap.Modal(document.getElementById('successModal'));
                     successModal.show();
+                }, function(error) {
+                    console.error('Erreur lors de l\'envoi de l\'email:', error);
+                    
+                    // Show error message
+                    alert('Une erreur est survenue lors de l\'envoi de votre demande. Veuillez réessayer plus tard.');
+                })
+                .finally(function() {
                     submitButton.innerHTML = originalText;
                     submitButton.disabled = false;
-                }, 2000);
+                });
             } else {
                 // Scroll to first invalid field
                 form.querySelector('input:invalid, select:invalid, textarea:invalid').scrollIntoView({
