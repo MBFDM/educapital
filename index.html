@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Capital - Services Financiers Innovants</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Eco Capital - Services financiers innovants pour transferts d'argent, financements de projets et solutions bancaires. Sécurisé, rapide et économique.">
+    <meta name="keywords" content="finance, transfert argent, crédit, AVI, compte bancaire, microfinance, éco capital">
+    <meta name="theme-color" content="#6c70c4">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecocapitale.com/">
+    <meta property="og:title" content="Eco Capital - Services Financiers Innovants">
+    <meta property="og:description" content="Solutions financières sécurisées pour transferts d'argent, financements de projets et services bancaires.">
+    <meta property="og:image" content="https://ecocapitale.com/images/social-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+
+    <!-- Modern CSS with CSS Variables -->
+    <style>
+        :root {
+            /* Couleurs */
+            --primary: #5e65c9;
+            --primary-dark: #333ea1;
+            --primary-light: #8e9fd8;
+            --secondary: #f5ac0e;
+            --secondary-dark: #e6b44c;
+            --accent: #051131;
+            --dark: #1e272e;
+            --light: #f8f9fa;
+            --light-gray: #f5f6fa;
+            --white: #ffffff;
+            --success: #78e08f;
+            --danger: #e55039;
+            --warning: #f6b93b;
+            --info: #4bcffa;
+            
+            /* Typographie */
+            --font-main: 'Montserrat', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+            
+            /* Effets */
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.05);
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: var(--font-main);
+            color: var(--dark);
+            background-color: var(--light-gray);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        /* Typography Enhancements */
+        .display-1, .display-2, .display-3, .display-4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Navbar - Enhanced */
+        .navbar {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            box-shadow: var(--shadow-md);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background: rgba(30, 39, 46, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            transition: var(--transition);
+        }
+        
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            padding: 8px 15px !important;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--secondary) !important;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            right: 15px;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        /* Buttons - Enhanced */
+        .btn {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            border-radius: 50px;
+            padding: 12px 28px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: none;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(246, 185, 59, 0.3);
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(246, 185, 59, 0.4);
+            color: var(--white);
+        }
+        
+        .btn-outline-custom {
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            background: transparent;
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(246, 185, 59, 0.3);
+        }
+        
+        .btn-lg {
+            padding: 15px 35px;
+            font-size: 16px;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        /* Hero Section - Enhanced */
+        #hero {
+            background: linear-gradient(135deg, rgba(72, 73, 97, 0.9), rgba(10, 23, 59, 0.9)), 
+                        url('images/supports/bg1.png') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23f8f9fa"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23f8f9fa"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f8f9fa"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-image {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 110%;
+            height: 110%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+        }
+        
+        /* Features Section - Enhanced */
+        .feature-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.03);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .feature-card:hover::before {
+            height: 10px;
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-dark));
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            box-shadow: 0 10px 20px rgba(15, 27, 95, 0.2);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+        }
+        
+        /* Services Section - Enhanced */
+        .service-card {
+            border: none;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            height: 100%;
+            background: var(--white);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .service-card img {
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .service-card .card-body {
+            padding: 30px;
+        }
+        
+        /* Service Client Section - Enhanced */
+        .service-client-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 60px auto;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-client-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .client-image img {
+            width: 450px;
+            height: auto;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            filter: brightness(90%);
+        }
+        
+        .client-image:hover img {
+            filter: brightness(100%);
+            transform: scale(1.02);
+        }
+        
+        .client-info {
+            max-width: 600px;
+            padding-left: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .service-client-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .client-info {
+                padding-left: 0;
+                padding-top: 30px;
+                max-width: 100%;
+            }
+            
+            .client-image img {
+                width: 100%;
+            }
+        }
+        
+        /* About Section - Enhanced */
+        .about-image {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-image:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(108, 112, 196, 0.2), rgba(74, 105, 189, 0.2));
+            z-index: 1;
+        }
+        
+        /* Contact Section - Enhanced */
+        .contact-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            height: 100%;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover::before {
+            height: 10px;
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(108, 112, 196, 0.1);
+            color: var(--primary);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover .contact-icon {
+            background: var(--primary);
+            color: var(--white);
+            transform: rotate(10deg);
+        }
+        
+        /* Testimonials - Enhanced */
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            margin: 15px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: rgba(108, 112, 196, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .client-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .client-img:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Footer - Enhanced */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #2c3e50);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-dark));
+        }
+        
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .footer-logo img:hover {
+            transform: scale(1.05);
+        }
+        
+        .footer-links h5 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-5px) scale(1.1);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 50px;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-card {
+                margin-bottom: 30px;
+            }
+        }
+        
+        /* Accessibility Improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        :focus-visible {
+            outline: 2px solid var(--secondary);
+            outline-offset: 3px;
+        }
+        
+        /* Dark Mode Toggle (Optional) */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 99;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="images/logo/logo.png" alt="Eco Capital Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active"><a class="nav-link" href="index.html"><i class="bi bi-house"></i> Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/services.html"><i class="bi bi-gear"></i> Services</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/formation.html"><i class="bi bi-person-plus me-1"></i> Formations</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="pages/about.html"><i class="bi bi-info-circle"></i> À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/contact.html"><i class="bi bi-telephone"></i> Contact</a></li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0"><a class="btn btn-custom btn-custom-animated" href="connexion/signin.html"><i class="bi bi-box-arrow-in-right"></i> Connexion</a></li>
+                    <li class="nav-item ms-lg-2"><a class="btn btn-custom btn-custom-animated" href="connexion/signup.html"><i class="bi bi-person-plus"></i> Créer un compte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold mb-4">Bienvenue chez <br><span class="text-gradient">Eco Capital</span></h1>
+                    <p class="lead mb-4">Une solution financière innovante qui simplifie votre accès au crédit et à d'autres services financiers. Profitez de taux compétitifs et d'une expérience client exceptionnelle.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#services" class="btn btn-light btn-lg px-4 py-2">
+                            <i class="bi bi-arrow-right me-2"></i> Nos Services
+                        </a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-2">
+                            <i class="bi bi-telephone me-2"></i> Nous contacter
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="images/supports/bg1.png" alt="Services Financiers" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary-soft text-primary mb-3">POURQUOI NOUS CHOISIR</span>
+                <h2 class="section-title">Notre Engagement envers Vous</h2>
+                <p class="lead mx-auto" style="max-width: 700px;">
+                    Chez Eco Capital, nous combinons technologie de pointe et expertise humaine pour vous offrir une expérience financière exceptionnelle.
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>Transactions Rapides</h4>
+                        <p>Transferts d'argent instantanés 24/7 vers plus de 50 pays avec notre réseau mondial.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4>Sécurité Maximale</h4>
+                        <p>Protection avancée avec cryptage bancaire 256 bits et authentification multi-facteurs.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <h4>Frais Compétitifs</h4>
+                        <p>Les frais les plus bas du marché, jusqu'à 50% moins chers que les banques traditionnelles.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>Support Premium</h4>
+                        <p>Assistance personnalisée 24/7 par nos experts financiers dédiés à votre satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-down">
+                <h2 class="section-title d-inline-block">Nos Services</h2>
+                <p class="lead">Eco Capital représente un partenaire financier qui conjugue performance économique et responsabilité environnementale.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                    <div class="service-card">
+                        <img src="images/supports/transfert.png" class="card-img-top" alt="Transfert d'argent">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Transfert d'argent</h5>
+                            <p class="card-text">Envoyez et recevez de l'argent en toute sécurité partout dans le monde.</p>
+                            <a href="./services/sendmoney.html" class="btn btn-custom">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3" data-aos="fade-up">
+                    <div class="service-card">
+                        <img src="images/supports/financement-projet.jpg" class="card-img-top" alt="Transfert d'argent">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Gérer votre Comptabilité</h5>
+                            <p class="card-text">Gestion comptabilité en toute sécurité partout dans le monde.</p>
+                            <a href="./services/service_comptable.html" class="btn btn-custom">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <img src="images/supports/projet.jpg" class="card-img-top" alt="Financement">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Financement des projets</h5>
+                            <p class="card-text">Accédez à des solutions de financement adaptées à vos projets.</p>
+                            <a href="./services/finance.html" class="btn btn-custom">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <img src="images/supports/avi.webp" class="card-img-top" alt="Caution Scolaire">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Caution Scolaire (AVI)</h5>
+                            <p class="card-text">Obtenez votre attestation de prise en charge pour vos études.</p>
+                            <a href="./services/avi.html" class="btn btn-custom">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="service-client-section" data-aos="fade-up">
+            <div class="client-image" data-aos="fade-right">
+                <img src="images/supports/ouverture-compte.jpeg" alt="Ouverture de compte bancaire" loading="lazy">
+            </div>
+            <div class="client-info" data-aos="fade-left">
+                <h3 class="fw-bold mb-3">Ouverture de compte bancaire en ligne</h3>
+                <p class="mb-4">Profitez d'une ouverture de compte 100% en ligne, rapide et sécurisée, avec des avantages exclusifs :</p>
+                <ul class="mb-4">
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Compte ouvert en moins de 10 minutes</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Carte bancaire gratuite la première année</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Accès à votre espace client 24/7</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Assistance dédiée pour vos opérations</li>
+                </ul>
+                <a href="./services/account.html" class="btn btn-custom btn-lg">
+                    <i class="bi bi-arrow-right me-2"></i> Ouvrir un compte maintenant
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-image">
+                        <img src="images/logo/logo.png" alt="À propos de Eco Capital" class="img-fluid" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">QUI SOMMES-NOUS</span>
+                    <h2 class="section-title mb-4">À propos de <span class="text-gradient">Eco Capital</span></h2>
+                    <p class="lead">Eco Capital est une institution de microfinance dédiée à soutenir le développement économique et social.</p>
+                    <p>Nous offrons des crédits aux entrepreneurs agricoles et aux étudiants qui souhaitent poursuivre leurs études à l'étranger. Notre mission est de favoriser l'inclusion financière et de promouvoir un modèle économique durable, en investissant dans les secteurs clés qui stimulent la croissance et le développement à long terme.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#services" class="btn btn-custom">
+                            <i class="bi bi-eye me-1"></i> Nos Services
+                        </a>
+                        <a href="pages/infos.html" class="btn btn-outline-custom">
+                            <i class="bi bi-people me-1"></i> Notre Équipe
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">CONTACT</span>
+                <h2 class="section-title">Restons en <span class="text-gradient">Contact</span></h2>
+                <p class="lead mx-auto" style="max-width: 700px;">
+                    Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans vos projets financiers.
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="contact-card" data-aos="fade-up">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        </div>
+                        <h4>Notre Adresse</h4>
+                        <p>123 Rue des Transferts<br>75001 Paris, France</p>
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-sm btn-outline-custom" rel="noopener noreferrer">
+                            <i class="fas fa-directions me-1" aria-hidden="true"></i> Itinéraire
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        </div>
+                        <h4>Appelez-nous</h4>
+                        <p>+1 (438) 833-3198<br>+242 06 113 56 12</p>
+                        <a href="tel:+14388333198" class="btn btn-sm btn-outline-custom">
+                            <i class="fas fa-phone me-1" aria-hidden="true"></i> Appeler maintenant
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>contacts@ecocapitale.com<br>support@ecocapitale.com</p>
+                        <a href="mailto:contacts@ecocapitale.com" class="btn btn-sm btn-outline-custom">
+                            <i class="fas fa-paper-plane me-1" aria-hidden="true"></i> Envoyer un email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <div class="contact-card p-4 p-lg-5">
+                        <h3 class="text-center mb-4">Envoyez-nous un message</h3>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
+                                        <label for="name">Votre nom</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Votre email" required>
+                                        <label for="email">Votre email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Sujet" required>
+                                        <label for="subject">Sujet</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="message" placeholder="Votre message" style="height: 150px" required></textarea>
+                                        <label for="message">Votre message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-custom btn-lg">
+                                        <i class="fas fa-paper-plane me-2"></i> Envoyer le message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-logo">
+                        <img src="images/logo/logo.png" alt="Eco Capital" loading="lazy">
+                    </div>
+                    <p>Le service en ligne est proposé par <strong>Eco Capital</strong> conjointement avec d'autres partenaires internationaux, agréée par l'autorité des marchés financiers.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Liens rapides</h5>
+                        <ul>
+                            <li><a href="#hero">Accueil</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#about">À propos</a></li>
+                            <li><a href="#testimonials">Témoignages</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-links">
+                        <h5>Nos Services</h5>
+                        <ul>
+                            <li><a href="./services/sendmoney.html">Transfert d'argent</a></li>
+                            <li><a href="./services/service_comptable.html">Gestion comptable</a></li>
+                            <li><a href="./services/finance.html">Financement des projets</a></li>
+                            <li><a href="./services/avi.html">Caution Scolaire (AVI)</a></li>
+                            <li><a href="./services/account.html">Ouverture de compte</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact</h5>
+                        <ul class="contact-info">
+                            <li class="mb-3">
+                                <i class="bi bi-geo-alt text-white me-2"></i>
+                                <span>123 Rue des Transferts, Paris, France</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-telephone text-white me-2"></i>
+                                <span>+1 (438) 833-3198</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-envelope text-white me-2"></i>
+                                <span>contacts@ecocapitale.com</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-clock text-white me-2"></i>
+                                <span>Lun-Ven: 9h-18h</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">&copy; <span id="currentYear"></span> Eco Capital. Tous droits réservés.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0">
+                            <a href="#" class="text-white me-3">Conditions d'utilisation</a>
+                            <a href="#" class="text-white">Politique de confidentialité</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top btn btn-custom" aria-label="Retour en haut de la page">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu when clicking a link
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

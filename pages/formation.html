@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation | Eco Capital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db; /* Bleu professionnel */
+            --secondary-color: #e74c3c; /* Rouge pour les accents */
+            --accent-color: #2ecc71; /* Vert pour les éléments positifs */
+            --dark-color: #2c3e50; /* Bleu foncé pour les textes */
+            --light-color: #f5f6fa;
+            --gradient: linear-gradient(135deg, #3498db, #2ecc71);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        /* Header Section */
+        .header-image {
+            position: relative;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            margin-top: 56px;
+        }
+        
+        .header-image .overlay {
+            background: rgba(44, 62, 80, 0.85);
+            padding: 40px;
+            text-align: center;
+            color: #fff;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 20px;
+        }
+        
+        .header-image h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 700;
+        }
+        
+        .header-image p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        
+        /* Section Styling */
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Module Cards */
+        .module-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .module-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .module-card h4 i {
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .module-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .module-card ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+        }
+        
+        .module-card ul li:before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+        
+        /* Methodology */
+        .methodology-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .methodology-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .methodology-content h5 {
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        /* Target Audience */
+        .audience-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .audience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .audience-card:hover h5 {
+            color: white;
+        }
+        
+        .audience-card h5 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .audience-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .audience-card:hover i {
+            color: white;
+        }
+        
+        /* Objectives */
+        .objective-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .objective-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1rem;
+        }
+        
+        /* Buttons */
+        .btn-primary-custom {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn-primary-custom:hover {
+            background: #2980b9;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+        }
+        
+        .btn-outline-custom {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Navbar */
+        .navbar {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, var(--dark-color), var(--primary-color));
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background: rgba(44, 62, 80, 0.95) !important;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: var(--accent-color) !important;
+        }
+        
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .header-image h1 {
+                font-size: 2.8rem;
+            }
+            
+            .header-image p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-image {
+                height: 60vh;
+            }
+            
+            .header-image h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-image .overlay {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-image {
+                height: 50vh;
+            }
+            
+            .header-image h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-image p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+        
+        .footer-logo img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h4 {
+            color: #fff;
+            margin-bottom: 25px;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .footer-column h4:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent-color);
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="images/logo/logo.png" alt="Eco Capital">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house"></i> Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/services.html"><i class="bi bi-gear"></i> Services</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../pages/formation.html"><i class="bi bi-person-plus me-1"></i> Formations</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/about.html"><i class="bi bi-info-circle"></i> À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/contact.html"><i class="bi bi-telephone"></i> Contact</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-custom ms-lg-3" href="../connexion/signin.html">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary-custom ms-lg-2" href="../connexion/signup.html">Créer un compte</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header-image" style="background-image: url('images/supports/formation.webp');">
+        <div class="overlay" data-aos="fade-down">
+            <h1>Formation Professionnelle</h1>
+            <p>Développez vos compétences avec notre programme complet adapté aux besoins des entreprises</p>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center" data-aos="fade-up">Notre Programme de Formation</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                        Chez Eco Capital, nous croyons en la formation comme levier de développement personnel et professionnel. 
+                        Notre programme en Comptabilité et Gestion Organisationnelle des Entreprises est conçu pour transmettre 
+                        les compétences essentielles à toute personne souhaitant travailler dans le domaine de la gestion, de la 
+                        comptabilité ou de l'administration d'entreprise.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title center" data-aos="fade-up">🎯 Objectifs de la formation</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="objective-item">
+                        <div class="objective-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h5>Maîtriser les techniques comptables</h5>
+                            <p>Acquérir les compétences de base et avancées en comptabilité</p>
+                        </div>
+                    </div>
+                    
+                    <div class="objective-item">
+                        <div class="objective-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h5>Comprendre l'entreprise</h5>
+                            <p>Appréhender la structure et le fonctionnement d'une entreprise</p>
+                        </div>
+                    </div>
+                    
+                    <div class="objective-item">
+                        <div class="objective-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h5>Gestion fiscale et sociale</h5>
+                            <p>Savoir gérer les obligations fiscales et sociales</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="objective-item">
+                        <div class="objective-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h5>Compétences pratiques</h5>
+                            <p>Acquérir des compétences directement applicables en entreprise</p>
+                        </div>
+                    </div>
+                    
+                    <div class="objective-item">
+                        <div class="objective-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h5>Préparation professionnelle</h5>
+                            <p>Se préparer à des postes comme comptable, assistant de gestion ou responsable administratif</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4" data-aos="fade-up">
+                        <a href="../pages/contact.html" class="btn btn-primary-custom me-3">S'inscrire maintenant</a>
+                        <a href="#" class="btn btn-outline-custom">Télécharger le programme</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title center" data-aos="fade-up">🧩 Contenu de la formation</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="module-card">
+                        <h4><i class="fas fa-calculator"></i> Comptabilité d'Entreprise</h4>
+                        <ul>
+                            <li>Plan comptable OHADA</li>
+                            <li>Enregistrement des opérations courantes</li>
+                            <li>Traitement des factures clients/fournisseurs</li>
+                            <li>Gestion de la TVA, des amortissements et des stocks</li>
+                            <li>Rapprochements bancaires</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="module-card">
+                        <h4><i class="fas fa-money-bill-wave"></i> Gestion de la Paie</h4>
+                        <ul>
+                            <li>Élaboration des bulletins de salaire</li>
+                            <li>Déclarations sociales (CNSS, IRPP, etc.)</li>
+                            <li>Gestion des congés et absences</li>
+                            <li>Comptabilisation des salaires</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="module-card">
+                        <h4><i class="fas fa-file-invoice-dollar"></i> Gestion Fiscale</h4>
+                        <ul>
+                            <li>Introduction à la fiscalité</li>
+                            <li>Déclaration et comptabilisation de la TVA</li>
+                            <li>Impôt sur les sociétés (IS), autres impôts et taxes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="module-card">
+                        <h4><i class="fas fa-sitemap"></i> Organisation d'Entreprise</h4>
+                        <ul>
+                            <li>Structure juridique et administrative</li>
+                            <li>Processus de gestion internes</li>
+                            <li>Tableaux de bord et reporting</li>
+                            <li>Analyse des coûts et marges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="section-title">󰞹 Méthodologie</h2>
+                    <p class="mb-4">Notre approche pédagogique est conçue pour maximiser l'acquisition de compétences pratiques immédiatement applicables.</p>
+                    
+                    <div class="methodology-item">
+                        <div class="methodology-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h5>Approche 100% pratique</h5>
+                            <p>Cas réels et exercices concrets basés sur des situations professionnelles</p>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology-item">
+                        <div class="methodology-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h5>Formateurs expérimentés</h5>
+                            <p>Professionnels du terrain avec une solide expérience pédagogique</p>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology-item">
+                        <div class="methodology-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h5>Suivi individualisé</h5>
+                            <p>Évaluation continue et accompagnement personnalisé</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="methodology-item mt-5 mt-lg-0">
+                        <div class="methodology-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h5>Support de formation</h5>
+                            <p>Documents pédagogiques complets fournis aux participants</p>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology-item">
+                        <div class="methodology-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h5>Certification</h5>
+                            <p>Certificat de fin de formation délivré après évaluation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology-item">
+                        <div class="methodology-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="methodology-content">
+                            <h5>Insertion professionnelle</h5>
+                            <p>Conseils et orientation pour faciliter votre insertion sur le marché du travail</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4" data-aos="fade-up">
+                        <a href="../pages/contact.html" class="btn btn-primary-custom me-3">Demander des informations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title center" data-aos="fade-up">🎓 À qui s'adresse cette formation ?</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="audience-card">
+                        <i class="fas fa-user-graduate"></i>
+                        <h5>Étudiants</h5>
+                        <p>En comptabilité, gestion ou finance</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="audience-card">
+                        <i class="fas fa-user-tie"></i>
+                        <h5>Professionnels</h5>
+                        <p>Secrétaires, assistants, gestionnaires</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="audience-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h5>Entrepreneurs</h5>
+                        <p>Porteurs de projet et créateurs d'entreprise</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="audience-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h5>En reconversion</h5>
+                        <p>Professionnels souhaitant changer de domaine</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 text-white" style="background: var(--gradient);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4" data-aos="fade-up">Prêt à développer vos compétences en comptabilité et gestion ?</h2>
+                    <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">
+                        Rejoignez notre prochaine session de formation et donnez un nouvel élan à votre carrière professionnelle.
+                    </p>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <a href="../connexion/signup.html" class="btn btn-light btn-lg me-3">S'inscrire maintenant</a>
+                        <a href="../pages/contact.html" class="btn btn-outline-light btn-lg">Nous contacter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="images/logo/logo.png" alt="Eco Capital" data-aos="fade-up">
+                    <p>Le service en ligne est proposé par <strong>Eco Capital</strong> conjointement avec d'autres partenaires internationaux, agréée par l'autorité des marchés financiers.</p>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Liens rapides</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../pages/services.html">Services</a></li>
+                    <li><a href="../pages/about.html">À propos</a></li>
+                    <li><a href="../pages/contact.html">Contact</a></li>
+                    <li><a href="../pages/infos.html">Informations légales</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Nos formations</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Comptabilité & Gestion</a></li>
+                    <li><a href="#">Fiscalité des entreprises</a></li>
+                    <li><a href="#">Gestion de la paie</a></li>
+                    <li><a href="#">Logiciels comptables</a></li>
+                    <li><a href="#">Formations sur mesure</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contactez-nous</h4>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Avenue des Affaires, Brazzaville, Congo</p>
+                    <p><i class="fas fa-phone"></i> +242 06 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> formation@ecocapital.cg</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2024 <strong>Eco Capital</strong>. Tous droits réservés.</p>
+            <p>Tous les logos, marques déposées, marques de service ou dénominations commerciales mentionnés ici sont la propriété de leurs titulaires respectifs.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

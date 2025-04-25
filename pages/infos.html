@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos de Notre Société | Eco Capital</title>
+    <meta name="description" content="Découvrez notre équipe, nos valeurs et notre mission pour vous offrir des solutions financières innovantes et fiables.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1b91ec;
+            --secondary-color: #ffdd57;
+            --dark-color: #111;
+            --light-color: #f9f9f9;
+            --text-color: #333;
+            --text-light: #666;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Header Section */
+        .header-section {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(27, 145, 236, 0.8)), url('images/supports/team-bg.webp') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .header-section h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease;
+        }
+        
+        .header-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 20px auto;
+            opacity: 0.9;
+        }
+        
+        /* Intro Section */
+        .intro-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .intro-section h2 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .intro-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .intro-section p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+        
+        .intro-section img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .intro-section img:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Values Section */
+        .values-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h3 {
+            font-weight: 600;
+            color: var(--text-color);
+            display: inline-block;
+        }
+        
+        .section-title h3::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .value-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            height: 100%;
+            border-bottom: 4px solid transparent;
+            text-align: center;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .value-card i {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h5 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .value-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-member-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover .team-member-img {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .team-member h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+        
+        .team-member p {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .team-social {
+            margin-top: 15px;
+        }
+        
+        .team-social a {
+            color: var(--text-light);
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Contact CTA Section */
+        .contact-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), #0d6efd);
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/supports/dots.png') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .contact-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-section h4 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background-color: #fff;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            color: var(--primary-color);
+        }
+        
+        /* Stats Section (New) */
+        .stats-section {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        /* Timeline Section (New) */
+        .timeline-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: #fff;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+            text-align: right;
+        }
+        
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-year {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Timeline */
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .left::after, .right::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+        
+        /* Navbar */
+        .navbar {
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, #000000, var(--primary-color));
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0 8px;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+        
+        .navbar-toggler {
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .btn-custom {
+            border: 2px solid var(--secondary-color);
+            color: #fff;
+            background-color: transparent;
+            transition: all 0.3s;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+        
+        .btn-custom:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 221, 87, 0.3);
+        }
+        
+        .btn-custom-animated {
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            padding: 60px 0 20px;
+            position: relative;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        .footer-links-column {
+            min-width: 150px;
+        }
+        
+        .footer-links-column h5 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .footer-links-column h5::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links-column ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links-column ul li a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .footer-socials {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin: 0 8px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin: 5px 0;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .header-section {
+                height: 70vh;
+            }
+            
+            .footer-links {
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-section {
+                height: 60vh;
+                padding-top: 70px;
+            }
+            
+            .header-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .intro-section, .values-section, .team-section, .contact-section {
+                padding: 60px 0;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+            }
+            
+            .footer-logo, .footer-links {
+                width: 100%;
+            }
+            
+            .footer-links {
+                margin-top: 30px;
+                gap: 30px;
+            }
+            
+            .footer-links-column {
+                min-width: 120px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-section {
+                height: 50vh;
+            }
+            
+            .header-section h1 {
+                font-size: 2rem;
+            }
+            
+            .value-card {
+                padding: 20px 15px;
+            }
+            
+            .team-member-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .contact-section h4 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="images/logo/logo.png" alt="Eco Capital Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house"></i> Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/services.html"><i class="bi bi-gear"></i> Services</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/formation.html"><i class="bi bi-person-plus me-1"></i> Formations</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="../pages/about.html"><i class="bi bi-info-circle"></i> À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/contact.html"><i class="bi bi-telephone"></i> Contact</a></li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0"><a class="btn btn-custom btn-custom-animated" href="../connexion/signin.html"><i class="bi bi-box-arrow-in-right"></i> Connexion</a></li>
+                    <li class="nav-item ms-lg-2"><a class="btn btn-custom btn-custom-animated" href="../connexion/signup.html"><i class="bi bi-person-plus"></i> Créer un compte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="container">
+            <h1 data-aos="fade-down">Notre Histoire & Valeurs</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Découvrez l'essence de notre entreprise et les principes qui guident chacune de nos actions</p>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <div class="intro-section container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h2>Qui sommes-nous ?</h2>
+                <p>Fondée en 2010, Eco Capital s'est rapidement imposée comme un acteur majeur dans le domaine des solutions financières innovantes. Notre mission est d'offrir des services accessibles, transparents et adaptés aux besoins de chaque client.</p>
+                <p>Nous croyons fermement que la finance doit être un levier d'opportunités pour tous. C'est pourquoi nous développons constamment des outils et services qui démocratisent l'accès à des solutions financières de qualité.</p>
+                <p>Notre équipe pluridisciplinaire, composée d'experts en finance, technologie et relation client, travaille sans relâche pour vous proposer des services toujours plus performants et sécurisés.</p>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <img src="images/supports/team.webp" class="img-fluid rounded shadow" alt="Notre Équipe" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6" data-aos="fade-up">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="12">12</div>
+                        <div class="stat-label">Années d'expérience</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="500">500</div>
+                        <div class="stat-label">Clients satisfaits</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">50</div>
+                        <div class="stat-label">Pays desservis</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="24">24</div>
+                        <div class="stat-label">Support 24/7</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Values Section -->
+    <div class="values-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h3>Nos Valeurs Fondatrices</h3>
+            </div>
+            <div class="row gy-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="value-card">
+                        <i class="bi bi-lightbulb"></i>
+                        <h5>Innovation</h5>
+                        <p>Nous repoussons constamment les limites de la technologie financière pour vous offrir des solutions avant-gardistes et efficaces.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-card">
+                        <i class="bi bi-people"></i>
+                        <h5>Collaboration</h5>
+                        <p>Nous bâtissons des relations durables avec nos clients, partenaires et collaborateurs basées sur le respect mutuel et la confiance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card">
+                        <i class="bi bi-shield-check"></i>
+                        <h5>Intégrité</h5>
+                        <p>Nous agissons avec transparence et éthique dans toutes nos décisions et interactions, sans compromis.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-card">
+                        <i class="bi bi-heart"></i>
+                        <h5>Engagement</h5>
+                        <p>Nous nous engageons pleinement à fournir des services de qualité exceptionnelle qui répondent à vos besoins spécifiques.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-card">
+                        <i class="bi bi-globe"></i>
+                        <h5>Responsabilité</h5>
+                        <p>Nous assumons nos responsabilités envers nos clients, nos employés, la société et l'environnement.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="value-card">
+                        <i class="bi bi-graph-up"></i>
+                        <h5>Excellence</h5>
+                        <p>Nous visons l'excellence dans tout ce que nous entreprenons, en nous améliorant continuellement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="timeline-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h3>Notre Parcours</h3>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2010</div>
+                        <h5>Fondation d'Eco Capital</h5>
+                        <p>Création de l'entreprise avec une petite équipe dédiée à révolutionner les services financiers en ligne.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2013</div>
+                        <h5>Première innovation majeure</h5>
+                        <p>Lancement de notre plateforme de gestion financière personnalisée, primée pour son interface intuitive.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2016</div>
+                        <h5>Expansion internationale</h5>
+                        <p>Ouverture de nos premiers bureaux à l'étranger et début de notre présence sur les marchés européens.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019</div>
+                        <h5>Certification sécurité</h5>
+                        <p>Obtention des certifications les plus strictes en matière de sécurité des données et transactions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="400">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022</div>
+                        <h5>Technologie blockchain</h5>
+                        <p>Intégration de la technologie blockchain pour des transactions plus rapides et sécurisées.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="500">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024</div>
+                        <h5>Nouveaux horizons</h5>
+                        <p>Lancement de notre programme d'investissement durable et responsable, aligné sur les ODD de l'ONU.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h3>Rencontrez Notre Équipe</h3>
+                <p class="text-center mt-3">Une équipe passionnée et expérimentée à votre service</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                    <div class="team-member">
+                        <img src="images/supports/team1.png" class="team-member-img" alt="Jean Dupont" loading="lazy">
+                        <h5>Jean Dupont</h5>
+                        <p>PDG & Fondateur</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member">
+                        <img src="images/supports/team2.jpeg" class="team-member-img" alt="Maria Lopez" loading="lazy">
+                        <h5>Maria Lopez</h5>
+                        <p>Directrice Financière</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member">
+                        <img src="images/supports/team3.jpeg" class="team-member-img" alt="Ahmed Khan" loading="lazy">
+                        <h5>Ahmed Khan</h5>
+                        <p>Responsable des Opérations</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member">
+                        <img src="images/supports/team3.jpeg" class="team-member-img" alt="Sophie Martin" loading="lazy">
+                        <h5>Sophie Martin</h5>
+                        <p>Directrice Technologie</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="container">
+            <h4 data-aos="fade-up">Prêt à commencer votre voyage avec nous ?</h4>
+            <p data-aos="fade-up" data-aos-delay="100">Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans la réalisation de vos projets financiers.</p>
+            <a href="../pages/contact.html" class="contact-btn" data-aos="fade-up" data-aos-delay="200">Nous Contacter <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo" data-aos="fade-right">
+                <img src="images/logo/logo.png" alt="Eco Capital" loading="lazy">
+                <p>Eco Capital est une plateforme financière innovante offrant des solutions sur mesure pour particuliers et professionnels. Agréée par les autorités financières internationales, nous nous engageons à fournir des services transparents et sécurisés.</p>
+            </div>
+            <div class="footer-links" data-aos="fade-left">
+                <div class="footer-links-column">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="../pages/services.html">Services</a></li>
+                        <li><a href="../pages/about.html">À propos</a></li>
+                        <li><a href="../pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <h5>Légal</h5>
+                    <ul>
+                        <li><a href="../pages/terms.html">Conditions d'utilisation</a></li>
+                        <li><a href="../pages/privacy.html">Politique de confidentialité</a></li>
+                        <li><a href="../pages/cookies.html">Politique des cookies</a></li>
+                        <li><a href="../pages/fraud.html">Prévention des fraudes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <h5>Ressources</h5>
+                    <ul>
+                        <li><a href="../pages/blog.html">Blog</a></li>
+                        <li><a href="../pages/faq.html">FAQ</a></li>
+                        <li><a href="../pages/guides.html">Guides</a></li>
+                        <li><a href="../pages/glossary.html">Glossaire</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-socials" data-aos="fade-up">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 <b>Eco Capital.</b> Tous droits réservés.</p>
+            <p>Tous les logos, marques déposées, marques de service ou dénominations commerciales mentionnés ici sont la propriété de leurs titulaires respectifs.</p>
+        </div>
+    </footer>
+  
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

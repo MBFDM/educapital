@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - Eco Capital | Solutions Financières Innovantes</title>
+    <meta name="description" content="Découvrez nos services financiers sur mesure : épargne, crédit, garant financier et comptes bancaires. Des solutions adaptées à vos besoins.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #ffdd57;
+            --dark-color: #111;
+            --light-color: #f9f9f9;
+            --text-color: #333;
+            --text-light: #666;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Header Section */
+        .header-image {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 123, 255, 0.8)), url('images/supports/nos-services.jpg') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .header-image .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .header-image h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease;
+        }
+        
+        .header-image p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 20px auto 0;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .service-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .service-body {
+            padding: 30px;
+        }
+        
+        .service-body h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .service-body p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .btn-service {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-service:hover {
+            background-color: #0056b3;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 123, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/supports/dots.png') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .cta-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: #fff;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            color: var(--primary-color);
+        }
+        
+        /* Navbar */
+        .navbar {
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, #000000, var(--primary-color));
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0 8px;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+        
+        .navbar-toggler {
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .btn-custom {
+            border: 2px solid var(--secondary-color);
+            color: #fff;
+            background-color: transparent;
+            transition: all 0.3s;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+        
+        .btn-custom:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 221, 87, 0.3);
+        }
+        
+        .btn-custom-animated {
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            padding: 60px 0 20px;
+            position: relative;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        .footer-links-column {
+            min-width: 150px;
+        }
+        
+        .footer-links-column h5 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .footer-links-column h5::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links-column ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links-column ul li a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .footer-socials {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin: 0 8px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin: 5px 0;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .header-image {
+                height: 70vh;
+            }
+            
+            .footer-links {
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-image {
+                height: 60vh;
+                padding-top: 70px;
+            }
+            
+            .header-image h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-image .overlay {
+                padding: 30px;
+            }
+            
+            .services-section, .features-section, .cta-section {
+                padding: 60px 0;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+            }
+            
+            .footer-logo, .footer-links {
+                width: 100%;
+            }
+            
+            .footer-links {
+                margin-top: 30px;
+                gap: 30px;
+            }
+            
+            .footer-links-column {
+                min-width: 120px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-image {
+                height: 50vh;
+            }
+            
+            .header-image h1 {
+                font-size: 2rem;
+            }
+            
+            .header-image p {
+                font-size: 1rem;
+            }
+            
+            .header-image .overlay {
+                padding: 20px;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="images/logo/logo.png" alt="Eco Capital Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house"></i> Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../pages/services.html"><i class="bi bi-gear"></i> Services</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/formation.html"><i class="bi bi-person-plus me-1"></i> Formations</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/about.html"><i class="bi bi-info-circle"></i> À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/contact.html"><i class="bi bi-telephone"></i> Contact</a></li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0"><a class="btn btn-custom btn-custom-animated" href="../connexion/signin.html"><i class="bi bi-box-arrow-in-right"></i> Connexion</a></li>
+                    <li class="nav-item ms-lg-2"><a class="btn btn-custom btn-custom-animated" href="../connexion/signup.html"><i class="bi bi-person-plus"></i> Créer un compte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header-image">
+        <div class="overlay" data-aos="fade-down">
+            <h1>Nos Solutions Financières</h1>
+            <p>Découvrez des services sur mesure pour répondre à tous vos besoins financiers</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <div class="services-section container">
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-up">
+                <div class="service-card">
+                    <img src="images/supports/epargne.jpg" class="service-img" alt="Service Épargne" loading="lazy">
+                    <div class="service-body">
+                        <i class="bi bi-piggy-bank service-icon"></i>
+                        <h3>Service Épargne</h3>
+                        <p>Faites fructifier vos économies avec nos solutions d'épargne adaptées à vos besoins. Des taux compétitifs et une gestion simplifiée pour maximiser vos rendements.</p>
+                        <a href="../services/finance.html" class="btn btn-service">Découvrir</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
+                    <img src="images/supports/credit.jpg" class="service-img" alt="Service Crédit" loading="lazy">
+                    <div class="service-body">
+                        <i class="bi bi-cash-coin service-icon"></i>
+                        <h3>Service Crédit</h3>
+                        <p>Accédez à des prêts flexibles pour financer vos projets personnels ou professionnels. Des solutions adaptées avec des conditions avantageuses et un accompagnement personnalisé.</p>
+                        <a href="../services/finance.html" class="btn btn-service">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
+                    <img src="images/supports/Garant.jpg" class="service-img" alt="Garant Financier" loading="lazy">
+                    <div class="service-body">
+                        <i class="bi bi-shield-check service-icon"></i>
+                        <h3>Garant Financier (AVI)</h3>
+                        <p>Obtenez un garant financier pour vos études à l'étranger. Une solution simple et rapide pour répondre aux exigences administratives des établissements étrangers.</p>
+                        <a href="../services/avi.html" class="btn btn-service">Découvrir</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card">
+                    <img src="images/supports/compte-bancaire.jpg" class="service-img" alt="Compte Bancaire" loading="lazy">
+                    <div class="service-body">
+                        <i class="bi bi-credit-card service-icon"></i>
+                        <h3>Compte Bancaire & Carte Visa</h3>
+                        <p>Créez un compte bancaire et obtenez une carte Visa rapidement. Une solution complète pour gérer vos finances au quotidien avec des avantages exclusifs.</p>
+                        <a href="../services/account.html" class="btn btn-service">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Pourquoi choisir Eco Capital ?</h2>
+                <p class="lead">Nos engagements pour votre satisfaction</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <h4>Sécurité Maximale</h4>
+                        <p>Toutes vos transactions et données sont protégées par les normes de sécurité les plus strictes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h4>Support 24/7</h4>
+                        <p>Notre équipe est disponible en permanence pour répondre à vos questions et résoudre vos problèmes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h4>Rendements Optimisés</h4>
+                        <p>Nous maximisons vos rendements grâce à des stratégies d'investissement avancées.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Prêt à commencer avec Eco Capital ?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Notre équipe est à votre disposition pour vous conseiller et vous accompagner dans le choix de la solution la plus adaptée à vos besoins.</p>
+            <a href="../pages/contact.html" class="cta-btn" data-aos="fade-up" data-aos-delay="200">Contactez-nous <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-logo">
+                        <img src="images/logo/logo.png" alt="Eco Capital" loading="lazy">
+                    </div>
+                    <p>Le service en ligne est proposé par <strong>Eco Capital</strong> conjointement avec d'autres partenaires internationaux, agréée par l'autorité des marchés financiers.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Liens rapides</h5>
+                        <ul>
+                            <li><a href="#hero">Accueil</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#about">À propos</a></li>
+                            <li><a href="#testimonials">Témoignages</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-links">
+                        <h5>Nos Services</h5>
+                        <ul>
+                            <li><a href="./services/sendmoney.html">Transfert d'argent</a></li>
+                            <li><a href="./services/service_comptable.html">Gestion comptable</a></li>
+                            <li><a href="./services/finance.html">Financement des projets</a></li>
+                            <li><a href="./services/avi.html">Caution Scolaire (AVI)</a></li>
+                            <li><a href="./services/account.html">Ouverture de compte</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact</h5>
+                        <ul class="contact-info">
+                            <li class="mb-3">
+                                <i class="bi bi-geo-alt text-white me-2"></i>
+                                <span>123 Rue des Transferts, Paris, France</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-telephone text-white me-2"></i>
+                                <span>+1 (438) 833-3198</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-envelope text-white me-2"></i>
+                                <span>contacts@ecocapitale.com</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-clock text-white me-2"></i>
+                                <span>Lun-Ven: 9h-18h</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">&copy; <span id="currentYear"></span> Eco Capital. Tous droits réservés.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0">
+                            <a href="#" class="text-white me-3">Conditions d'utilisation</a>
+                            <a href="#" class="text-white">Politique de confidentialité</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top btn btn-custom" aria-label="Retour en haut de la page">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu when clicking a link
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

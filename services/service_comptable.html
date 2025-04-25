@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise & Gestion Comptable | Eco Capital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #16a085;
+            --secondary-color: #f39c12;
+            --dark-color: #1e272e;
+            --light-color: #f5f6fa;
+            --gradient: linear-gradient(135deg, #16a085, #27ae60);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Section */
+        .header-image {
+            position: relative;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            margin-top: 56px; /* Pour compenser la navbar fixe */
+        }
+        
+        .header-image .overlay {
+            background: rgba(34, 49, 63, 0.8);
+            padding: 40px;
+            text-align: center;
+            color: #fff;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 20px;
+        }
+        
+        .header-image h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 700;
+        }
+        
+        .header-image p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        
+        /* Section Styling */
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Features Cards */
+        .feature-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h4 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* List Items */
+        .styled-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .styled-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .styled-list li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient);
+            color: #fff;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Buttons */
+        .btn-primary-custom {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(22, 160, 133, 0.4);
+        }
+        
+        .btn-primary-custom:hover {
+            background: #138a72;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(22, 160, 133, 0.6);
+        }
+        
+        .btn-outline-custom {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Info Boxes */
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card h4 {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-card h4 i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .service-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .service-card ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .service-card ul li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        /* Target Audience */
+        .audience-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .audience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .audience-card:hover h5 {
+            color: white;
+        }
+        
+        .audience-card h5 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        /* Why Choose Us */
+        .advantage-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .advantage-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        .advantage-content h5 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        /* Navbar */
+        .navbar {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, #000000, var(--primary-color));
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.9) !important;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+        
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .header-image h1 {
+                font-size: 2.8rem;
+            }
+            
+            .header-image p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-image {
+                height: 60vh;
+            }
+            
+            .header-image h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-image .overlay {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-image {
+                height: 50vh;
+            }
+            
+            .header-image h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-image p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #111;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+        
+        .footer-logo img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h4 {
+            color: #fff;
+            margin-bottom: 25px;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .footer-column h4:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+        
+        /* Animation for elements */
+        [data-aos="fade-up"] {
+            transform: translateY(30px);
+            opacity: 0;
+            transition-property: transform, opacity;
+        }
+        
+        [data-aos="fade-up"].aos-animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="images/logo/logo.png" alt="Eco Capital" class="img-fluid">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house"></i> Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../pages/services.html"><i class="bi bi-gear"></i> Services</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/formation.html"><i class="bi bi-person-plus me-1"></i> Formations</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/about.html"><i class="bi bi-info-circle"></i> À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/contact.html"><i class="bi bi-telephone"></i> Contact</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-custom ms-lg-3" href="../connexion/signin.html">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary-custom ms-lg-2" href="../connexion/signup.html">Créer un compte</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header-image" style="background-image: url('images/supports/R.jpg');">
+        <div class="overlay" data-aos="fade-down">
+            <h1>Expertise & Gestion Comptable</h1>
+            <p>Nous accompagnons votre entreprise dans toutes les étapes de sa gestion comptable</p>
+        </div>
+    </section>
+
+    <!-- Service Description -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title center" data-aos="fade-up">Notre Expertise Comptable</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                        Chez Eco Capital, nous accompagnons les entreprises dans toutes les étapes de leur gestion comptable, 
+                        avec un service d'expertise complet, rigoureux et adapté à vos réalités.
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        Notre objectif : vous permettre de vous concentrer sur le développement de votre activité, 
+                        pendant que nous veillons à la conformité, à la clarté et à la performance de votre comptabilité.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="service-card">
+                        <h4><i class="fas fa-folder-open"></i> Tenue et suivi de la comptabilité générale</h4>
+                        <ul>
+                            <li>Enregistrement des opérations courantes</li>
+                            <li>Lettrage des comptes clients/fournisseurs</li>
+                            <li>Suivi de la trésorerie et rapprochements bancaires</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-right" data-aos-delay="100">
+                        <h4><i class="fas fa-file-invoice-dollar"></i> Élaboration des états financiers</h4>
+                        <ul>
+                            <li>Bilan comptable</li>
+                            <li>Compte de résultat</li>
+                            <li>Tableau des flux de trésorerie</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="service-card">
+                        <h4><i class="fas fa-calendar-alt"></i> Gestion des déclarations fiscales & sociales</h4>
+                        <ul>
+                            <li>TVA, IS, IRPP, CNSS</li>
+                            <li>Déclarations périodiques</li>
+                            <li>Établissement des états de paie</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-left" data-aos-delay="100">
+                        <h4><i class="fas fa-handshake"></i> Externalisation comptable</h4>
+                        <ul>
+                            <li>Prise en charge partielle ou totale de votre comptabilité</li>
+                            <li>Interface avec l'administration fiscale</li>
+                            <li>Reporting périodique clair et synthétique</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-12" data-aos="fade-up">
+                    <div class="service-card">
+                        <h4><i class="fas fa-headset"></i> Assistance et conseil comptable</h4>
+                        <ul>
+                            <li>Accompagnement dans la structuration financière</li>
+                            <li>Analyse des marges, coûts, rentabilité</li>
+                            <li>Conseils personnalisés pour la prise de décision</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title center" data-aos="fade-up">À qui s'adresse ce service ?</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="audience-card">
+                        <h5>PME, TPE et startups</h5>
+                        <p>Des solutions adaptées aux entreprises en croissance</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="audience-card">
+                        <h5>Secteurs spécialisés</h5>
+                        <p>BTP, commerce, agroalimentaire et autres secteurs</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="audience-card">
+                        <h5>Professions libérales</h5>
+                        <p>Cabinets d'avocats, médecins, consultants, etc.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="audience-card">
+                        <h5>Entrepreneurs individuels</h5>
+                        <p>Un accompagnement sur mesure pour les indépendants</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="section-title">Pourquoi choisir Eco Capital ?</h2>
+                    <p class="mb-4">Notre approche différenciée nous permet de vous offrir un service comptable de qualité supérieure, adapté à vos besoins spécifiques.</p>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="advantage-content">
+                            <h5>Transparence totale</h5>
+                            <p>Pas de frais cachés, des tarifs clairs et compétitifs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="advantage-content">
+                            <h5>Expertise locale & internationale</h5>
+                            <p>Une connaissance approfondie des réglementations locales et des standards internationaux</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="advantage-content">
+                            <h5>Suivi personnalisé</h5>
+                            <p>Un comptable dédié qui connaît votre entreprise et vos besoins</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="advantage-item mt-5 mt-lg-0">
+                        <div class="advantage-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="advantage-content">
+                            <h5>Réactivité et fiabilité</h5>
+                            <p>Traitement rapide et précis de vos obligations comptables et fiscales</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="advantage-content">
+                            <h5>Solutions adaptées</h5>
+                            <p>Des services sur mesure selon votre secteur d'activité et la taille de votre entreprise</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="advantage-content">
+                            <h5>Analyse stratégique</h5>
+                            <p>Des rapports qui vous aident à prendre des décisions éclairées pour votre entreprise</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4" data-aos="fade-up" data-aos-delay="200">
+                        <a href="../pages/contact.html" class="btn btn-primary-custom me-3">Demander un devis</a>
+                        <a href="../connexion/signup.html" class="btn btn-outline-custom">Ouvrir un compte</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center cta-content">
+                    <h2 class="mb-4" data-aos="fade-up">Prêt à simplifier votre gestion comptable ?</h2>
+                    <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">
+                        Laissez nos experts prendre en charge votre comptabilité pour que vous puissiez vous concentrer sur ce qui compte vraiment : développer votre entreprise.
+                    </p>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <a href="../pages/contact.html" class="btn btn-light btn-lg me-3">Contactez-nous</a>
+                        <a href="tel:+242061234567" class="btn btn-outline-light btn-lg"><i class="fas fa-phone"></i> +242 06 123 4567</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="images/logo/logo.png" alt="Eco Capital" data-aos="fade-up">
+                    <p>Le service en ligne est proposé par <strong>Eco Capital</strong> conjointement avec d'autres partenaires internationaux, agréée par l'autorité des marchés financiers.</p>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Liens rapides</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../pages/services.html">Services</a></li>
+                    <li><a href="../pages/about.html">À propos</a></li>
+                    <li><a href="../pages/contact.html">Contact</a></li>
+                    <li><a href="../pages/infos.html">Informations légales</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Nos services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Expertise comptable</a></li>
+                    <li><a href="#">Financement de projets</a></li>
+                    <li><a href="#">Gestion de trésorerie</a></li>
+                    <li><a href="#">Conseil financier</a></li>
+                    <li><a href="#">Solutions entreprises</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contactez-nous</h4>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Avenue des Affaires, Brazzaville, Congo</p>
+                    <p><i class="fas fa-phone"></i> +242 06 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> contact@ecocapital.cg</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2024 <strong>Eco Capital</strong>. Tous droits réservés.</p>
+            <p>Tous les logos, marques déposées, marques de service ou dénominations commerciales mentionnés ici sont la propriété de leurs titulaires respectifs.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
