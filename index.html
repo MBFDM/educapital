@@ -40,7 +40,7 @@
         :root {
             /* Couleurs */
             --primary: #5e65c9;
-            --primary-dark: #333ea1;
+            --primary-dark: #1d1d1f;
             --primary-light: #8e9fd8;
             --secondary: #f5ac0e;
             --secondary-dark: #e6b44c;
@@ -126,7 +126,14 @@
         }
         
         .text-gradient {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(95deg, rgb(101, 101, 150), rgb(15, 9, 73));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-1 {
+            background: linear-gradient(95deg, rgb(255, 255, 255), rgb(255, 136, 0));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -239,7 +246,7 @@
         
         /* Hero Section - Enhanced */
         #hero {
-            background: linear-gradient(135deg, rgba(72, 73, 97, 0.9), rgba(10, 23, 59, 0.9)), 
+            background: linear-gradient(135deg, rgba(84, 84, 97, 0.9), rgba(12, 22, 105, 0.9)), 
                         url('images/supports/bg1.png') no-repeat center center;
             background-size: cover;
             color: var(--white);
@@ -777,7 +784,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="display-4 fw-bold mb-4">Bienvenue chez <br><span class="text-gradient">Eco Capital</span></h1>
+                    <h1 class="display-4 fw-bold mb-4">Bienvenue chez <br><span class="text-gradient-1">Eco Capital</span></h1>
                     <p class="lead mb-4">Une solution financière innovante qui simplifie votre accès au crédit et à d'autres services financiers. Profitez de taux compétitifs et d'une expérience client exceptionnelle.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="#services" class="btn btn-light btn-lg px-4 py-2">
